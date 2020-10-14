@@ -6,9 +6,10 @@ read -p "enter value of a:" a
 read -p "enter value of b" b
 read -p "enter value of c:" c
 
-num=$(( $a + $b * $c ));
+num=$(( $a * $b + $c ));
 
-echo "compute (a+b*c) : $num"
+echo "compute (a*b+c) : $num"
+
 
 
 
