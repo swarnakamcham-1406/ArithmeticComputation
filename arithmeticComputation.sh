@@ -30,7 +30,33 @@ result[$((counter++))]=$third
 result[$((counter++))]=$four
 echo ${result[@]}
 echo ${!result[@]}
-echo ${#result[@]}
+for ((i=0;i<=4;i++))
+do
+arr[i]=${result[$(($i-1))]}
+
+done
+
+echo "before sorting ${arr[@]}"
+
+for ((k=0;k<=4;k++))
+do
+
+  for ((j=0;j<=4;j++))
+  do
+    if [[ ${arr[$k]} -gt ${arr[$j]} ]]
+        then
+
+
+          temp=${arr[$k]}
+           arr[$k]=${arr[$j]}
+          arr[$j]=$temp
+        fi
+done
+done
+
+echo "after sortiing ${arr[@]}"
+echo "after sorting ${!arr[@]}"
+
 
 
 
