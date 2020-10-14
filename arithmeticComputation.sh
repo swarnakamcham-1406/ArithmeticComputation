@@ -54,9 +54,34 @@ do
 done
 done
 
-echo "after sortiing ${arr[@]}"
-echo "after sorting ${!arr[@]}"
+echo "after sortiing descending order ${arr[@]}"
+echo "after sorting descending order${!arr[@]}"
 
+
+for ((i=0;i<=3;i++))
+do
+arr[i]=${result[$(($i-1))]}
+
+done
+
+echo "before sorting ${arr[@]}"
+
+for ((k=0;k<=3;k++))
+do
+
+  for ((j=0;j<=3;j++))
+  do
+    if [[ ${arr[$k]} -lt ${arr[$j]} ]]
+        then
+ temp=${arr[$k]}
+           arr[$k]=${arr[$j]}
+          arr[$j]=$temp
+        fi
+done
+done
+
+echo "after sortiing ascendingorder ${arr[@]}"
+echo "after sorting ascendingorder ${!arr[@]}"
 
 
 
