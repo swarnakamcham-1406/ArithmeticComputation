@@ -30,7 +30,7 @@ result[$((counter++))]=$third
 result[$((counter++))]=$four
 echo ${result[@]}
 echo ${!result[@]}
-
+echo ${#result[@]}
 
 
 
